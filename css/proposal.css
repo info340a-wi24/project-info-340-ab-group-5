@@ -1,13 +1,18 @@
 body {
     font-family: 'Lexend Deca', sans-serif;
-    color: #2e475d;
+    color: black;
     margin: auto;
     width: 640px;
     padding: 50px;
 }
 
 header h1 {
+    color: #fc4445;
     text-align: center;
+}
+
+h2 {
+    color: #55bcc9;
 }
 
 section {
