@@ -1,11 +1,24 @@
-h1 {
-    text-align: center;
-}
-
 body {
+    font-family: 'Lexend Deca', sans-serif;
+    color: #2e475d;
     margin: auto;
     width: 640px;
     padding: 50px;
-    font-family: 'Lexend Deca', sans-serif;
-    color: #2e475d
+}
+
+header h1 {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
