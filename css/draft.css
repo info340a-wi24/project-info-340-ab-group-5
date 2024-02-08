@@ -1,4 +1,16 @@
-#name 
+.profile
 {
     text-align: center;
+}
+
+#demographic
+{
+    margin-top: 15%;
+}
+
+.profile li
+{
+    text-align: left;
+    width: 50%;
+    background-color: aqua;
 }
