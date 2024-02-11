@@ -1,16 +1,76 @@
-.profile
+#demographic
+{
+    margin-top: 5%;
+}
+
+#username
+{
+    margin-top: 5%;
+}
+
+#setting
+{
+    margin-top: 2%;
+}
+
+.profile_div img
+{
+    width: 300px;
+    height: 300px;
+}
+
+.profile_div
 {
     text-align: center;
 }
 
-#demographic
+.profile_div ul 
 {
-    margin-top: 15%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.profile_div ul li 
+{
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
 }
 
-.profile li
+nav
 {
-    text-align: left;
-    width: 50%;
-    background-color: aqua;
+    position: sticky;
+    bottom: 0;
+}
+
+nav ul
+{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li
+{
+    display: inline;
+    background-color: darkgrey;
+}
+
+nav img
+{
+    width: 100px;
+    height: 100px;
+}
+
+.nav_flex_container
+{
+    display: flex;
+}
+
+.nav_flex_item
+{
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 25%;
 }

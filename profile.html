@@ -9,18 +9,32 @@
     <title>Profile Page</title>
 </head>
 <body>
-    <main class="profile">
-        <div>
+    <main>
+        <div class="profile_div">
             <img src="img\Profile_Icon.png" alt="Empty Profile Image Icon">
         </div>
-        <h1>Name</h1>
-        <!-- Instead of centering text in CSS, make entire profile into a card objected to center it. -->
-        <h1 id="demographic">Demographic Information</h1>
-        <ul>
-            <li>Height</li>
-            <li>Weight</li>
-            <li>Gender</li>
-        </ul>
+        <div class="profile_div">
+            <h1 id="username">Name</h1>
+        </div>
+        <div class="profile_div">
+            <h1 id="demographic">Demographic Information</h1>
+            <ul>
+                <li>Height</li>
+                <li>Weight</li>
+                <li>Gender</li>
+            </ul>
+        </div>
+        <div class="profile_div">
+            <h1 id="setting">Settings</h1>
+        </div>
     </main>
+    <nav>
+        <ul class="nav_flex_container">
+            <li class="nav_flex_item"><img src="img\Home_NavBar.png" alt="Home NavBar Icon"></li>
+            <li class="nav_flex_item"><img src="img\Food_NavBar.jpg" alt="Food Input NavBar Icon"></li>
+            <li class="nav_flex_item"><img src="img\Workout_NavBar.jpg" alt="Workout Input NavBar Icon"></li>
+            <li class="nav_flex_item"><img src="img\Profile_Icon.png" alt="Profile NavBar Icon"></li>
+        </ul>
+    </nav>
 </body>
 </html>
