@@ -1,6 +1,5 @@
 /* profile css */
 
-/*
 #demographic
 {
     margin-top: 5%;
@@ -40,44 +39,6 @@
     padding: 0;
     font-size: 2em;
 }
-
-nav
-{
-    position: sticky;
-    bottom: 0;
-}
-
-nav ul
-{
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav li
-{
-    display: inline;
-    background-color: darkgrey;
-}
-
-nav img
-{
-    width: 100px;
-    height: 100px;
-}
-
-.nav_flex_container
-{
-    display: flex;
-}
-
-.nav_flex_item
-{
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 25%;
-}
-*/
 
 /* profile css */
 
@@ -201,6 +162,15 @@ a.active, a:hover {
 
 body {
     font-family: 'Lexend Deca', sans-serif;
+}
+
+section {
+    font-size: 1.6em;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
 }
 
 @media (min-width: 598px) {
