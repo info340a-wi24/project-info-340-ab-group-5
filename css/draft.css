@@ -170,6 +170,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: lightblue;
 }
 
 section {
@@ -195,6 +196,13 @@ header, footer {
 .form-group label {
     display: block;
     margin-bottom: 5px;
+}
+
+#workout-input-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 @media (min-width: 598px) {
@@ -227,4 +235,5 @@ header, footer {
         margin-right: auto;
         margin-left: 2rem;
     }
+
 }
