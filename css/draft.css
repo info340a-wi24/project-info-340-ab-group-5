@@ -3,16 +3,19 @@
 #demographic
 {
     margin-top: 5%;
+    font-size: 1.6em;
 }
 
 #username
 {
     margin-top: 5%;
+    font-size: 1.6em;
 }
 
 #setting
 {
     margin-top: 2%;
+    font-size: 1.6em;
 }
 
 .profile_div img
@@ -37,7 +40,7 @@
 {
     margin: 0;
     padding: 0;
-    font-size: 2em;
+    font-size: 1em;
 }
 
 /* profile css */
@@ -162,15 +165,36 @@ a.active, a:hover {
 
 body {
     font-family: 'Lexend Deca', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 section {
-    font-size: 1.6em;
     text-align: center;
 }
 
-footer {
+header, footer {
     text-align: center;
+    padding: 1rem;
+}
+
+#food-input-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 @media (min-width: 598px) {
