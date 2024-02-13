@@ -4,60 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Group 5">
-    <meta name="description" content="Place for User to Input Food">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Place for User to Input Food - Health and Fitness Tracker">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/draft.css">
-    <title>Food Input Page</title>
+    <title>Food Input - Health and Fitness Tracker</title>
 </head>
 <body>
     <header>
-        <h1>Your Health Tracker</h1>
+        <h1>Food Input - Health and Fitness Tracker</h1>
     </header>
     <nav>
-        <img src="img/Food_NavBar.jpg" alt="Food Navigation Bar" class="navbar-image">
         <ul class="nav-list">
-            <li class="nav-item">
-                <a href="index.html">Health Tracker</a>
-            </li>
-            <li class="nav-item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="food_input.html">Food</a>
-            </li>
-            <li class="nav-item">
-                <a href="workout_input.html">Workout</a>
-            </li>
-            <li class="nav-item">
-                <a href="profile.html">Profile</a>
-            </li>
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="food_input.html">Food Input</a></li>
+            <li class="nav-item"><a href="workout_input.html">Workout Input</a></li>
+            <li class="nav-item"><a href="profile.html">Profile</a></li>
         </ul>
     </nav>
-
     <main>
-        <h2>Welcome to the Food Input Page</h2>
-        <form id="food-input-form">
-            <div class="form-group">
-                <label for="food-name">Food Name:</label>
-                <input type="text" id="food-name" name="food-name" required>
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" required>
-            </div>
-            <div class="form-group">
-                <label for="calories">Calories:</label>
-                <input type="number" id="calories" name="calories" required>
-            </div>
-            <div class="form-group">
-                <label for="time-of-consumption">Time of Consumption:</label>
-                <input type="time" id="time-of-consumption" name="time-of-consumption" required>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+        <section>
+            <h2>Track Your Food Intake</h2>
+            <form id="food-input-form">
+                <div class="form-group">
+                    <label for="food-name">Food Name:</label>
+                    <input type="text" id="food-name" name="food-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="calories">Calories (kcal):</label>
+                    <input type="number" id="calories" name="calories" required>
+                </div>
+                <div class="form-group">
+                    <label for="protein">Protein (g):</label>
+                    <input type="number" id="protein" name="protein">
+                </div>
+                <div class="form-group">
+                    <label for="carbs">Carbohydrates (g):</label>
+                    <input type="number" id="carbs" name="carbs">
+                </div>
+                <div class="form-group">
+                    <label for="fats">Fats (g):</label>
+                    <input type="number" id="fats" name="fats">
+                </div>
+                <div class="form-group">
+                    <label for="time-of-consumption">Time of Consumption:</label>
+                    <input type="time" id="time-of-consumption" name="time-of-consumption" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
     </main>
-
     <footer>
         <p>&copy; 2024 Group 5. All rights reserved.</p>
     </footer>
