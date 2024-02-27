@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Group 5">
     <meta name="description" content="Home Page for App">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../project-info-340-ab-group-5/img/icons8-dumbbell-48.png">
     <link rel="stylesheet" type="text/css" href="css/draft.css">
     <title>Home Page</title>
 </head>
@@ -14,18 +14,18 @@
     <nav>
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="index.html">Health Tracker<a>
+                <a href="index.html">Health and Fitness Tracker<a>
             </li>
-            <li class="nav-item">
+            <li class="nav-page-link">
                 <a href="index.html">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-page-link">
                 <a href="food_input.html">Food</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-page-link">
                 <a href="workout_input.html">Workout</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-page-link">
                 <a href="profile.html">Profile</a>
             </li>
         </ul>
@@ -36,33 +36,26 @@
     </header>
 
     <main>
-        <section>
-            <h2>My Progress Today</h2>
-            <form id="workout-input-form">
-                <div class="form-group">
-                    <label for="workout-type">Workout Type:</label>
-                    <input type="text" id="workout-type" name="workout-type" required>
-                </div>
-                <div class="form-group">
-                    <label for="duration">Duration (minutes):</label>
-                    <input type="number" id="duration" name="duration" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="distance">Distance (if applicable):</label>
-                    <input type="number" id="distance" name="distance" min="0">
-                </div>
-                <div class="form-group">
-                    <label for="sets">Number of Sets (if applicable):</label>
-                    <input type="number" id="sets" name="sets" min="0">
-                </div>
-                <div class="form-group">
-                    <label for="reps">Number of Reps (if applicable):</label>
-                    <input type="number" id="reps" name="reps" min="0">
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+        <div class="home-container">
+            <h2>Calories Consumed</h2>
+            <p>1,786</p>
+            <h2>Protein</h2>
+            <p>152g</p>
+            <h2>Fats</h2>
+            <p>16g</p>
+            <h2>Carbohydrates</h2>
+            <p>45g</p>
+            <h2>Time Spent Exercising</h2>
+            <p>67 minutes</p>
+        </div>
     </main>
+
+    <div class="mobile-navbar">
+        <a href="index.html">Home</a>
+        <a href="food_input.html">Food</a>
+        <a href="workout_input.html">Workout</a>
+        <a href="profile.html">Profile</a>
+    </div>
     
     <footer>
         <p>&copy; 2024 Group 5. All rights reserved.</p>

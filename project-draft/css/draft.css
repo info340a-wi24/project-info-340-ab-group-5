@@ -1,39 +1,3 @@
-#demographic {
-    margin-top: 5%;
-    font-size: 1.6em;
-}
-
-#username {
-    margin-top: 5%;
-    font-size: 1.6em;
-}
-
-#setting {
-    margin-top: 2%;
-    font-size: 1.6em;
-}
-
-.profile_div img {
-    width: 300px;
-    height: 300px;
-}
-
-.profile_div {
-    text-align: center;
-}
-
-.profile_div ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-  
-.profile_div ul li {
-    margin: 0;
-    padding: 0;
-    font-size: 1em;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -95,34 +59,114 @@ header, footer {
     background-color: white;
 }
 
+.home-container {
+    max-width: 20rem;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+}
+
+.profile-container {
+    max-width: 20rem;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+
+}
+
+.profile-container img {
+    display: block;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
+    height: 10rem;
+}
+
+.profile-container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container ul li {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+.nav-list {
+    align-items: center;
+    background: #00bfff;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 0;
+}
+
+.nav-page-link {
+    display: none;
+}
+
+.nav-item {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.nav-item a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 1ms ease-in;
+}
+
+.nav-item a:hover {
+    color: black;
+}
+
+.nav-item:first-child {
+    margin-right: auto;
+    margin-left: 2rem;
+}
+
+.mobile-navbar {
+    background-color: #00bfff;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+}
+
+.mobile-navbar a {
+    display: inline-block;
+    padding: 1rem 1rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer {
+    display: none;
+}
+
 @media (min-width: 598px) {
-    .nav-list {
-        align-items: center;
-        background: #00bfff;
-        display: flex;
-        justify-content: flex-end;
-        padding: 1rem 0;
+    .mobile-navbar {
+        display: none;
     }
-    
-    .nav-item {
+
+    .nav-page-link {
+        display:flex;
         list-style: none;
         margin-right: 2rem;
     }
-    
-    .nav-item a {
+
+    .nav-page-link a {
         color: white;
         font-weight: bold;
         text-decoration: none;
         transition: all 1ms ease-in;
     }
-    
-    .nav-item a:hover {
-        color: black;
-    }
-    
-    .nav-item:first-child {
-        margin-right: auto;
-        margin-left: 2rem;
-    }
 
+    footer {
+        display: block;
+    }
 }
