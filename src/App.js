@@ -13,14 +13,13 @@ function App(props)
 {
     const [calories, setCalories] = useState(0);
     const [workoutTime, setWorkoutTime] = useState(0);
-    const [userIsLoggedIn, setUserIsLoggedIn] = useState(true);
+    const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
 
     function RequireSignIn(props)
     {
         if (!userIsLoggedIn)
         {
-            /* setUserIsLoggedIn(true); */
-            return <p>Do You Have A LogIn?</p>
+            return <SignIn logIn={userIsLoggedIn} setLogIn={setUserIsLoggedIn} />
         }
         else
         {
