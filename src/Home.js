@@ -7,7 +7,7 @@ export default function HomePage(props)
             <main>
                 <div className="home-container">
                     <h2>Calories Consumed</h2>
-                    <p>1,786</p>
+                    <p>{props.calories}</p>
                     <h2>Protein</h2>
                     <p>152g</p>
                     <h2>Fats</h2>
@@ -15,7 +15,7 @@ export default function HomePage(props)
                     <h2>Carbohydrates</h2>
                     <p>45g</p>
                     <h2>Time Spent Exercising</h2>
-                    <p>67 minutes</p>
+                    <p>{props.workout + " minutes"}</p>
                 </div>
             </main>
     

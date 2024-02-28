@@ -35,7 +35,7 @@ function App(props)
                     <Route element={<RequireSignIn />} >
                         <Route element={<NavBarLayout />} >
                             <Route path='profile' element={<Profile />} />
-                            <Route path='home' element={<Home />} />
+                            <Route path='home' element={<Home workout={workoutTime} setWorkout={setWorkoutTime} calories={calories} setCalories={setCalories} />} />
                             <Route path='food' element={<Food />} />
                             <Route path='workout' element={<Workout />} />
                             <Route path="*" element={<Navigate to="/home" />} />
