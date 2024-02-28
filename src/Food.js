@@ -8,25 +8,25 @@ export default function FoodPage(props)
                 <section>
                     <h2>Track Your Food Intake</h2>
                     <form id="food-input-form">
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="food-name">Food Name:</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="quantity">Quantity:</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="calories">Calories (kcal):</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="protein">Protein (g):</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="carbs">Carbohydrates (g):</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="fats">Fats (g):</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="time-of-consumption">Time of Consumption:</label>
                         </div>
                         <button type="submit">Submit</button>

@@ -5,7 +5,7 @@ export default function HomePage(props)
     return (
         <div>
             <main>
-                <div class="home-container">
+                <div className="home-container">
                     <h2>Calories Consumed</h2>
                     <p>1,786</p>
                     <h2>Protein</h2>
