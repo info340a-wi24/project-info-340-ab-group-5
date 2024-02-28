@@ -8,19 +8,19 @@ export default function Workout(props)
                 <section>
                     <h2>Track Your Workout</h2>
                     <form id="workout-input-form">
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="workout-type">Workout Type:</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="duration">Duration (minutes):</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="distance">Distance (if applicable):</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="sets">Number of Sets (if applicable):</label>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="reps">Number of Reps (if applicable):</label>
                         </div>
                         <button type="submit">Submit</button>

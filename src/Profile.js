@@ -5,7 +5,7 @@ export default function Home(props)
     return (
         <div>
             <main>
-                <div class="profile-container">
+                <div className="profile-container">
                     <h1 id="username">Name</h1>
                     <h1 id="demographic">Demographic Information</h1>
                     <ul>
