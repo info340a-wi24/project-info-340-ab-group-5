@@ -13,7 +13,7 @@ function App(props)
 {
     const [calories, setCalories] = useState(0);
     const [workoutTime, setWorkoutTime] = useState(0);
-    const [userIsLoggedIn, setUserIsLoggedIn] = useState(false);
+    const [userIsLoggedIn, setUserIsLoggedIn] = useState(true); // For Demo Purposes
 
     function RequireSignIn(props)
     {

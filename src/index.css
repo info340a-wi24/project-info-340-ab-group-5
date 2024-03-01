@@ -3,7 +3,7 @@
 }
 
 nav .active {
-    background-color:#eee;
+    background-color:lightblue;
     padding: .25em 1em;
     border: 1px solid #ddd;
 }
@@ -137,7 +137,7 @@ header, footer {
 }
 
 .nav-item a {
-    color: white;
+    color: blue;
     font-weight: bold;
     text-decoration: none;
     transition: all 1ms ease-in;
@@ -198,7 +198,7 @@ footer {
 /* Alexis CSS */
 
 .homefeed {
-    background: red;
+    background: lightblue;
     border: 1px solid black;
     position: relative;
     border-radius: 8px;
