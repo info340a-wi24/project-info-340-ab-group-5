@@ -9,6 +9,7 @@ export default function Workout(props) {
     reps: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const today = new Date().toLocaleDateString();
 
   const handleChange = (event) => {
     setWorkoutData({
@@ -36,9 +37,12 @@ export default function Workout(props) {
 
   return (
     <div className="workout-container">
+      <div className="top-background"></div>
+      <section className="content-container">
       {submitted ? (
         <section className="submitted-info">
           <h2>Your Workout Information</h2>
+          <p>Date: {today}</p>
           <p>Workout Type: {workoutData.workoutType}</p>
           <p>Duration: {workoutData.duration} minutes</p>
           <p>Distance: {workoutData.distance}</p>
@@ -110,6 +114,7 @@ export default function Workout(props) {
           </section>
         </main>
       )}
+      </section>
       <footer>
         <p>&copy; 2024 Group 5. All rights reserved.</p>
       </footer>
