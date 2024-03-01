@@ -194,3 +194,14 @@ footer {
         display: block;
     }
 }
+
+/* Alexis CSS */
+
+.homefeed {
+    background: red;
+    border: 1px solid black;
+    position: relative;
+    border-radius: 8px;
+    margin: 24px;
+    padding: 16px 24px 32px;
+}

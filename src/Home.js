@@ -4,19 +4,16 @@ export default function HomePage(props)
 {
     return (
         <div>
+            
             <main>
-                <div className="home-container">
-                    <h2>Calories Consumed</h2>
-                    <p>{props.calories}</p>
-                    <h2>Protein</h2>
-                    <p>152g</p>
-                    <h2>Fats</h2>
-                    <p>16g</p>
-                    <h2>Carbohydrates</h2>
-                    <p>45g</p>
-                    <h2>Time Spent Exercising</h2>
-                    <p>{props.workout + " minutes"}</p>
+                <div className="homefeed">
+                    <h1>Health Info</h1>
+                    <h2>Calories:</h2>
+                    <h2>Protein:</h2>
+                    <h2>Fat:</h2>
+                    <h2>Carbohydrates:</h2>
                 </div>
+
             </main>
     
             <footer>
