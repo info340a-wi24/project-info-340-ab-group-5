@@ -1,6 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function FoodPage() {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+
+  const handleChange = (event) => {
+    setNewTask(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (newTask.trim() !== '') {
+      setTasks([...tasks, newTask]);
+      setNewTask('');
+    }
+  };
+
+  const handleDelete = (index) => {
+    const updatedTasks = [...tasks];
+    updatedTasks.splice(index, 1);
+    setTasks(updatedTasks);
+  };
+
   return (
     <div>
       <main>
@@ -37,6 +58,19 @@ export default function FoodPage() {
             </div>
             <button type="submit">Submit</button>
           </form>
+          <hr />
+          <h2>To-Do List</h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" value={newTask} onChange={handleChange} placeholder="Enter a new task" />
+            <button type="submit">Add task to list</button>
+          </form>
+          <ul>
+            {tasks.map((task, index) => (
+              <li key={index}>
+                {task} <button onClick={() => handleDelete(index)}>Complete</button>
+              </li>
+            ))}
+          </ul>
         </section>
       </main>
       <footer>
