@@ -1,9 +1,13 @@
 import React, { useState } from 'react'; //import React Component
+import Background from './img/profile_background.jpg';
 
-export default function Home(props)
-{
+export default function Home(props) {
+    const profileStyle = {
+        backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
+    };
+
     return (
-        <div>
+        <div style={profileStyle}>
             <main>
                 <div className="profile-container">
                     <h1 id="username">Welcome, USERNAME</h1>

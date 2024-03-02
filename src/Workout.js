@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Background from './img/workout_background.jpg';
 
 export default function Workout(props) {
   const [workoutData, setWorkoutData] = useState({
@@ -35,8 +36,12 @@ export default function Workout(props) {
     setSubmitted(false);
   };
 
+  const workoutStyle = {
+    backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
+  };
+
   return (
-    <div className="workout-container">
+    <div className="workout-container" style={workoutStyle}>
       <div className="top-background"></div>
       <section className="content-container">
       {submitted ? (

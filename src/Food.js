@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import Background from './img/food_background.jpeg';
 
 export default function FoodPage() {
+  const foodStyle = {
+    backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
+  };
+
   return (
-    <div>
+    <div style={foodStyle}>
       <main>
         <section>
           <h2>Track Your Food Intake</h2>
