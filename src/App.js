@@ -13,7 +13,10 @@ function App(props)
 {
     const [calories, setCalories] = useState(0);
     const [workoutTime, setWorkoutTime] = useState(0);
-    const [userIsLoggedIn, setUserIsLoggedIn] = useState(true); // For Demo Purposes
+    const [protein, setProtein] = useState(0);
+    const [fats, setFats] = useState(0);
+    const [carbs, setCarbs] = useState(0);
+    const [userIsLoggedIn, setUserIsLoggedIn] = useState(true); // For Demo Purposes (to be removed for FireBase authentication)
 
     function RequireSignIn(props)
     {
@@ -34,7 +37,7 @@ function App(props)
                     <Route element={<RequireSignIn />} >
                         <Route element={<NavBarLayout />} >
                             <Route path='profile' element={<Profile />} />
-                            <Route path='home' element={<Home workout={workoutTime} setWorkout={setWorkoutTime} calories={calories} setCalories={setCalories} />} />
+                            <Route path='home' element={<Home workout={workoutTime} calories={calories} protein={protein} fats={fats} carbs={carbs} />} />
                             <Route path='food' element={<Food />} />
                             <Route path='workout' element={<Workout />} />
                             <Route path="*" element={<Navigate to="/home" />} />

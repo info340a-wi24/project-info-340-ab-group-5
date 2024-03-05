@@ -11,10 +11,11 @@ export default function HomePage(props) {
             <main>
                 <div className="homefeed">
                     <h1>Today's Summary</h1>
-                    <h2>Calories: 1764/2500</h2>
-                    <h2>Protein (g): 65/95</h2>
-                    <h2>Fats (g): 12/30</h2>
-                    <h2>Carbohydrates (g): 102/130</h2>
+                    <h2>Calories: {props.calories}/2500</h2>
+                    <h2>Protein (g): {props.protein}/95</h2>
+                    <h2>Fats (g): {props.fats}/30</h2>
+                    <h2>Carbohydrates (g): {props.carbs}/130</h2>
+                    <h2>Workout Time: {props.workout} minutes</h2>
                 </div>
             </main>
     
