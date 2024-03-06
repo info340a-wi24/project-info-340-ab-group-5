@@ -39,7 +39,7 @@ function App(props)
                             <Route path='profile' element={<Profile />} />
                             <Route path='home' element={<Home workout={workoutTime} calories={calories} protein={protein} fats={fats} carbs={carbs} />} />
                             <Route path='food' element={<Food />} />
-                            <Route path='workout' element={<Workout />} />
+                            <Route path='workout' element={<Workout setWorkout={setWorkoutTime} workout={workoutTime}/>} />
                             <Route path="*" element={<Navigate to="/home" />} />
                         </Route>
                     </Route>
