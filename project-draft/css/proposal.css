@@ -1,22 +1,31 @@
 body {
     font-family: 'Lexend Deca', sans-serif;
     color: black;
-    margin: auto;
-    width: 640px;
-    padding: 50px;
+    margin: 0 auto; /* Center align the content and remove default margin */
+    max-width: 960px; /* Optimal reading width */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
 }
 
-header h1 {
-    color: #fc4445;
-    text-align: center;
+header, main, footer {
+    display: flex;
+    flex-direction: column; /* Ensure vertical stacking for main sections */
+    align-items: center; /* Center-align children */
+    text-align: center; /* Center-align text for all content */
+}
+
+header h1, main h2 {
+    color: #fc4445; /* Make the header color consistent */
 }
 
 h2 {
-    color: #55bcc9;
+    color: #55bcc9; /* Distinct color for subheadings */
 }
 
 section {
-    margin-bottom: 20px;
+    margin: 20px 0; /* Added margin for spacing between sections */
+    width: 100%; /* Full width sections */
 }
 
 a {
@@ -26,4 +35,35 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Grid Layout for sections */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Accessibility: Ensure visibility for focus states */
+a:focus, button:focus {
+    outline: 2px dashed #007bff; /* Highlight focus */
+    outline-offset: 4px;
+}
+
+/* Media Query for Smaller Screens */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    /* Adapt layout for single-column on small screens */
+    main {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
 }
