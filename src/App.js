@@ -10,6 +10,7 @@ import Workout from './Workout';
 import { NavBarLayout } from './NavBar';
 
 import { initializeApp } from 'firebase/app';
+import { getDatabase, ref} from 'firebase/database';
 import { firebaseConfig } from './Config';
 import {
   getAuth,
@@ -19,6 +20,9 @@ import {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getDatabase();
+const foodRef = ref(db, 'food');
+const workoutRef = ref(db, 'workout');
 
 function App(props)
 {
@@ -26,6 +30,16 @@ function App(props)
     const [protein, setProtein] = useState(0);
     const [fats, setFats] = useState(0);
     const [carbs, setCarbs] = useState(0);
+    const [foodSubmitted, setFoodSubmitted] = useState(false);
+    const [currentFood, setCurrentFood] = useState({
+        foodName: '',
+        quantity: 1,
+        calories: '',
+        protein: '',
+        carbs: '',
+        fats: '',
+        timeOfConsumption: '',
+    });
     
     const [workoutTime, setWorkoutTime] = useState(0);
     const [submitted, setSubmitted] = useState(false);
@@ -57,8 +71,8 @@ function App(props)
                         <Route element={<NavBarLayout />} >
                             <Route path='profile' element={<Profile />} />
                             <Route path='home' element={<Home workout={workoutTime} calories={calories} protein={protein} fats={fats} carbs={carbs} />} />
-                            <Route path='food' element={<Food />} />
-                            <Route path='workout' element={<Workout setWorkout={setWorkoutTime} workout={workoutTime} setSubmitted={setSubmitted} submitted={submitted} currentWorkout={currentWorkout} setCurrentWorkout={setCurrentWorkout} />} />
+                            <Route path='food' element={<Food calories={calories} setCalories={setCalories} protein={protein} setProtein={setProtein} fats={fats} setFats={setFats} carbs={carbs} setCarbs={setCarbs} submitted={foodSubmitted} setSubmitted={setFoodSubmitted} currentFood={currentFood} setCurrentFood={setCurrentFood} foodRef={foodRef} />} />
+                            <Route path='workout' element={<Workout setWorkout={setWorkoutTime} workout={workoutTime} setSubmitted={setSubmitted} submitted={submitted} currentWorkout={currentWorkout} setCurrentWorkout={setCurrentWorkout} workoutRef={workoutRef} />} />
                             <Route path="*" element={<Navigate to="/home" />} />
                         </Route>
                     </Route>

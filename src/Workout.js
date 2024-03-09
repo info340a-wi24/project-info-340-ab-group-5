@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import Background from './img/workout_background.jpg';
 
-import { getDatabase, ref, push } from 'firebase/database';
-
-const db = getDatabase();
-const workoutRef = ref(db, 'workout');
+import { push } from 'firebase/database';
 
 export default function Workout(props) {
   const [workoutData, setWorkoutData] = useState({
@@ -33,7 +30,7 @@ export default function Workout(props) {
       sets: workoutData.sets,
       reps: workoutData.reps,
     };
-    push(workoutRef, workout)
+    push(props.workoutRef, workout)
       .then(() => props.setWorkout(props.workout + parseInt(workout.duration)))
       .then(() => props.setCurrentWorkout({
         workoutType: workout.workoutType,
