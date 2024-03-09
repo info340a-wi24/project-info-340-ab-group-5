@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; //import React Component
+import React, { useEffect, useState } from 'react'; //import React Component
 import Background from './img/home_background.jpg';
 
 export default function HomePage(props) {

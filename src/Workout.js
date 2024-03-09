@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import Background from './img/workout_background.jpg';
 
+import { getDatabase, ref, push } from 'firebase/database';
+
+const db = getDatabase();
+const workoutRef = ref(db, 'workout');
+
 export default function Workout(props) {
   const [workoutData, setWorkoutData] = useState({
     workoutType: '',
@@ -9,7 +14,6 @@ export default function Workout(props) {
     sets: '',
     reps: '',
   });
-  const [submitted, setSubmitted] = useState(false);
   const today = new Date().toLocaleDateString();
 
   const handleChange = (event) => {
@@ -22,8 +26,43 @@ export default function Workout(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Form submitted:', workoutData);
-    setSubmitted(true);
+    const workout = {
+      workoutType: workoutData.workoutType,
+      duration: workoutData.duration,
+      distance: workoutData.distance,
+      sets: workoutData.sets,
+      reps: workoutData.reps,
+    };
+    push(workoutRef, workout)
+      .then(() => props.setWorkout(props.workout + parseInt(workout.duration)))
+      .then(() => props.setCurrentWorkout({
+        workoutType: workout.workoutType,
+        duration: workout.duration,
+        distance: workout.distance,
+        sets: workout.sets,
+        reps: workout.reps,
+      }))
+      .then(() => props.setSubmitted(true));
   };
+
+  /*
+  const sendTweet = () => {
+    const currentUser = auth.currentUser;
+
+    if (currentUser) {
+      const tweet = {
+        user: currentUser.displayName,
+        timestamp: Date.now(),
+        text: tweetText,
+        likes: 0,
+      };
+
+      push(tweetsRef, tweet)
+        .then(() => setTweetText(''))
+        .catch((error) => console.log('Error: ', error));
+    }
+  };
+  */
 
   const clearForm = () => {
     setWorkoutData({
@@ -33,7 +72,7 @@ export default function Workout(props) {
       sets: '',
       reps: '',
     });
-    setSubmitted(false);
+    props.setSubmitted(false);
   };
 
   const workoutStyle = {
@@ -44,15 +83,15 @@ export default function Workout(props) {
     <div className="workout-container" style={workoutStyle}>
       <div className="top-background"></div>
       <section className="content-container">
-      {submitted ? (
+      {props.submitted ? (
         <section className="submitted-info">
           <h2>Your Workout Information</h2>
           <p>Date: {today}</p>
-          <p>Workout Type: {workoutData.workoutType}</p>
-          <p>Duration: {workoutData.duration} minutes</p>
-          <p>Distance: {workoutData.distance}</p>
-          <p>Sets: {workoutData.sets}</p>
-          <p>Reps: {workoutData.reps}</p>
+          <p>Workout Type: {props.currentWorkout.workoutType}</p>
+          <p>Duration: {props.currentWorkout.duration} minutes</p>
+          <p>Distance: {props.currentWorkout.distance}</p>
+          <p>Sets: {props.currentWorkout.sets}</p>
+          <p>Reps: {props.currentWorkout.reps}</p>
           <button onClick={clearForm}>Clear Form</button>
         </section>
       ) : (
