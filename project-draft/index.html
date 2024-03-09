@@ -6,16 +6,15 @@
     <meta name="author" content="Group 5">
     <meta name="description" content="Home Page for Health and Fitness Tracker">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="img/icons8-dumbbell-48.png"> <!-- Corrected the path for the favicon -->
+    <link rel="icon" type="image/x-icon" href="img/icons8-dumbbell-48.png">
     <link rel="stylesheet" type="text/css" href="css/draft.css">
     <title>Home Page - Health and Fitness Tracker</title>
 </head>
 <body class="home">
-    <!-- Navigation Bar -->
     <nav>
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="index.html">Health and Fitness Tracker</a> <!-- Corrected the closing tag -->
+                <a href="index.html">Health and Fitness Tracker</a>
             </li>
             <li class="nav-page-link">
                 <a href="index.html">Home</a>
@@ -32,29 +31,40 @@
         </ul>
     </nav>
     
-    <!-- Header with Site Title -->
     <header>
         <h1>Health and Fitness Tracker</h1>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <div class="home-container">
-            <!-- Displayed statistics -->
-            <h2>Calories Consumed</h2>
-            <p>1,786</p>
-            <h2>Protein</h2>
-            <p>152g</p>
-            <h2>Fats</h2>
-            <p>16g</p>
-            <h2>Carbohydrates</h2>
-            <p>45g</p>
-            <h2>Time Spent Exercising</h2>
-            <p>67 minutes</p>
+        <div class="home-container" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+            <div class="stats-item">
+                <img src="img/calories-icon.png" alt="Calories Consumed Icon" style="width: 100px; height: auto;">
+                <h2>Calories Consumed</h2>
+                <p>1,786</p>
+            </div>
+            <div class="stats-item">
+                <img src="img/protein-icon.png" alt="Protein Icon" style="width: 100px; height: auto;">
+                <h2>Protein</h2>
+                <p>152g</p>
+            </div>
+            <div class="stats-item">
+                <img src="img/fats-icon.png" alt="Fats Icon" style="width: 100px; height: auto;">
+                <h2>Fats</h2>
+                <p>16g</p>
+            </div>
+            <div class="stats-item">
+                <img src="img/carbs-icon.png" alt="Carbohydrates Icon" style="width: 100px; height: auto;">
+                <h2>Carbohydrates</h2>
+                <p>45g</p>
+            </div>
+            <div class="stats-item">
+                <img src="img/exercise-icon.png" alt="Exercise Icon" style="width: 100px; height: auto;">
+                <h2>Time Spent Exercising</h2>
+                <p>67 minutes</p>
+            </div>
         </div>
     </main>
 
-    <!-- Mobile Navigation Bar -->
     <div class="mobile-navbar">
         <a href="index.html">Home</a>
         <a href="food_input.html">Food</a>
@@ -62,7 +72,6 @@
         <a href="profile.html">Profile</a>
     </div>
     
-    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Group 5. All rights reserved.</p>
     </footer>
