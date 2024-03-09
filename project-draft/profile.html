@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Group 5">
-    <meta name="description" content="Place for User's Profile">
+    <meta name="description" content="User's Profile - Health and Fitness Tracker">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="../project-info-340-ab-group-5/img/icons8-dumbbell-48.png">
+    <link rel="icon" type="image/x-icon" href="img/icons8-dumbbell-48.png"> <!-- Adjust the path as needed -->
     <link rel="stylesheet" type="text/css" href="css/draft.css">
     <title>Profile Page</title>
 </head>
 <body class="profile">
+    <!-- Navigation Bar -->
     <nav>
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="index.html">Health and Fitness Tracker<a>
+                <a href="index.html">Health and Fitness Tracker</a>
             </li>
+            <!-- Navigation Links -->
             <li class="nav-page-link">
                 <a href="index.html">Home</a>
             </li>
@@ -25,34 +27,42 @@
             <li class="nav-page-link">
                 <a href="workout_input.html">Workout</a>
             </li>
-            <li class="nav-page-link">
+            <li class="nav-page-link active">
                 <a href="profile.html">Profile</a>
             </li>
         </ul>
     </nav>
     
+    <!-- Main Profile Content -->
     <main>
         <div class="profile-container">
-            <img src="img\Profile_Icon.png" alt="Empty Profile Image Icon">
-            <h1 id="username">Name</h1>
-            <h1 id="demographic">Demographic Information</h1>
+            <!-- User Profile Image -->
+            <img src="img/Profile_Icon.png" alt="User Profile Icon"> <!-- Adjust the path as needed -->
+            <!-- User Information -->
+            <h1 id="username">John Doe</h1>
+            <h2 id="demographic">Demographic Information</h2>
             <ul>
-                <li>Gender</li>
-                <li>Height</li>
-                <li>Weight</li>
-                <li>Weight Goal</li>
+                <li>Gender: Male</li>
+                <li>Height: 180cm</li>
+                <li>Weight: 80kg</li>
+                <li>Weight Goal: 75kg</li>
             </ul>
-            <h1 id="setting">Settings</h1>
+            <h2 id="settings">Settings</h2>
+            <!-- Settings or Preferences could be listed here -->
+            <!-- ... -->
         </div>
     </main>
 
+    <!-- Mobile Navigation Bar -->
     <div class="mobile-navbar">
+        <!-- Mobile Navigation Links -->
         <a href="index.html">Home</a>
         <a href="food_input.html">Food</a>
         <a href="workout_input.html">Workout</a>
-        <a href="profile.html">Profile</a>
+        <a href="profile.html" class="active">Profile</a>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Group 5. All rights reserved.</p>
     </footer>
