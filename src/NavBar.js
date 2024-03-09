@@ -1,63 +1,53 @@
-import React from 'react'; //import React Component
-import {  NavLink, Outlet } from 'react-router-dom';
+import React, { useState } from 'react'; // Import useState hook
+import { NavLink, Outlet } from 'react-router-dom';
 
 function NavBar(props) {
-  /*
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
+  const [isActive, setIsActive] = useState(false); // State to manage hamburger menu
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  });
-
-  document.querySelectorAll(".nav-link").forEach(link => link.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-  }));
-  */
+  // Toggle function for hamburger menu
+  const toggleHamburger = () => {
+    setIsActive(!isActive);
+  };
 
   return (
     <nav>
       <nav className="navbar">
         <div className="logo">
-          <NavLink to="/home" className="nav-link">Health and Fitness Tracker</NavLink>
+          <NavLink to="/home" className="nav-link" onClick={() => setIsActive(false)}>Health and Fitness Tracker</NavLink>
         </div>
 
-        <ul className="nav-menu">
+        <ul className={`nav-menu ${isActive ? 'active' : ''}`}>
           <li className="nav-item">
-            <NavLink to="/home" className="nav-link">Home</NavLink>
+            <NavLink to="/home" className="nav-link" onClick={() => setIsActive(false)}>Home</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/food" className="nav-link">Food</NavLink>
+            <NavLink to="/food" className="nav-link" onClick={() => setIsActive(false)}>Food</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/workout" className="nav-link">Workout</NavLink>
+            <NavLink to="/workout" className="nav-link" onClick={() => setIsActive(false)}>Workout</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/profile" className="nav-link">Profile</NavLink>
+            <NavLink to="/profile" className="nav-link" onClick={() => setIsActive(false)}>Profile</NavLink>
           </li>
         </ul>
 
-        <div className="hamburger">
+        <div className="hamburger" onClick={toggleHamburger}>
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
       </nav>
-
     </nav>
   );
 }
 
-export function NavBarLayout(props)
-{
-    return (
-        <div>
-            <NavBar />
-            <div>
-                <Outlet />
-            </div>
-        </div>
-    );
+export function NavBarLayout(props) {
+  return (
+    <div>
+      <NavBar />
+      <div>
+        <Outlet />
+      </div>
+    </div>
+  );
 }
