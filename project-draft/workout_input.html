@@ -6,15 +6,16 @@
     <meta name="author" content="Group 5">
     <meta name="description" content="Place for User to Input Workout - Health and Fitness Tracker">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="../project-info-340-ab-group-5/img/icons8-dumbbell-48.png">
+    <link rel="icon" type="image/x-icon" href="../img/icons8-dumbbell-48.png">
     <link rel="stylesheet" type="text/css" href="css/draft.css">
     <title>Workout Input - Health and Fitness Tracker</title>
 </head>
 <body class="workout">
+    <!-- Navigation Bar -->
     <nav>
         <ul class="nav-list">
             <li class="nav-item">
-                <a href="index.html">Health and Fitness Tracker<a>
+                <a href="index.html">Health and Fitness Tracker</a>
             </li>
             <li class="nav-page-link">
                 <a href="index.html">Home</a>
@@ -22,7 +23,7 @@
             <li class="nav-page-link">
                 <a href="food_input.html">Food</a>
             </li>
-            <li class="nav-page-link">
+            <li class="nav-page-link active">
                 <a href="workout_input.html">Workout</a>
             </li>
             <li class="nav-page-link">
@@ -31,42 +32,57 @@
         </ul>
     </nav>
 
+    <!-- Main Content Section -->
     <main>
+        <!-- Workout Tracking Section -->
         <section>
             <h2>Track Your Workout</h2>
-            <form id="workout-input-form">
+            <!-- Placeholder for a potential image -->
+            <!-- <img src="path-to-your-workout-image.jpg" alt="Image Description" class="workout-image"> -->
+            <!-- Workout Input Form -->
+            <form id="workout-input-form" class="form-layout">
+                <!-- Form Group for Workout Type -->
                 <div class="form-group">
                     <label for="workout-type">Workout Type:</label>
                     <input type="text" id="workout-type" name="workout-type" required>
                 </div>
+                <!-- Form Group for Duration -->
                 <div class="form-group">
                     <label for="duration">Duration (minutes):</label>
                     <input type="number" id="duration" name="duration" min="1" required>
                 </div>
+                <!-- Form Group for Distance -->
                 <div class="form-group">
                     <label for="distance">Distance (if applicable):</label>
                     <input type="number" id="distance" name="distance" min="0">
                 </div>
+                <!-- Form Group for Number of Sets -->
                 <div class="form-group">
                     <label for="sets">Number of Sets (if applicable):</label>
                     <input type="number" id="sets" name="sets" min="0">
                 </div>
+                <!-- Form Group for Number of Reps -->
                 <div class="form-group">
                     <label for="reps">Number of Reps (if applicable):</label>
                     <input type="number" id="reps" name="reps" min="0">
                 </div>
-                <button type="submit">Submit</button>
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </section>
     </main>
 
+    <!-- Mobile Navigation Bar -->
     <div class="mobile-navbar">
         <a href="index.html">Home</a>
         <a href="food_input.html">Food</a>
-        <a href="workout_input.html">Workout</a>
+        <a href="workout_input.html" class="active">Workout</a>
         <a href="profile.html">Profile</a>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Group 5. All rights reserved.</p>
     </footer>
