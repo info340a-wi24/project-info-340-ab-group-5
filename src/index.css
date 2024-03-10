@@ -193,3 +193,20 @@ header, footer {
     padding: 16px 24px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* SignIn Page CSS */
+/* Still Need to be able to make image go full screen */
+
+.signin-container {
+    text-align: center;
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    top: 50%;
+    transform: translateY(30%);
+}

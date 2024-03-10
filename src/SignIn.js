@@ -10,6 +10,7 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
+import Background from './img/home_background.jpg';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -63,30 +64,15 @@ function SignIn(props) {
         await updateProfile(userCredential.user, { displayName: username });
         setUsername('');
 
-        await updateProfile(userCredential.gender, { displayName: gender });
-        setGender('');
-
-        await updateProfile(userCredential.height, { displayName: height });
-        setHeight('');
-
-        await updateProfile(userCredential.weight, { displayName: weight });
-        setWeight('');
-
-        await updateProfile(userCredential.weightGoal, { displayName: weightGoal });
-        setWeightGoal('');
-
-        await updateProfile(userCredential.calorieGoal, { displayName: calorieGoal });
-        setCalorieGoal('');
-
-        props.setShowSignIn(false);
         props.setCurrentUser({
-          username: userCredential.user,
-          gender: userCredential.gender,
-          height: userCredential.height,
-          weight: userCredential.weight,
-          weightGoal: userCredential.weightGoal,
-          dailyCalorieGoal: userCredential.calorieGoal,
-        })
+          username: username,
+          gender: gender,
+          height: height,
+          weight: weight,
+          weightGoal: weightGoal,
+          dailyCalorieGoal: calorieGoal,
+        });
+        props.setSignedIn(false);
       
         setUser(userCredential.user);
     } catch (error) {
@@ -97,7 +83,7 @@ function SignIn(props) {
   const handleSignIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      props.setShowSignIn(false);
+      props.setSignedIn(false);
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -127,15 +113,20 @@ function SignIn(props) {
   };
 
   const isReadytoSubmit = !!user || !isValidEmail(email) || password === '';
-  console.log(!!user);
-  console.log(!isValidEmail(email));
-  console.log(password === '');
+
+  const signInStyle = {
+    backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
+  };
 
   return (
-    <div>
-      <FormGroup floating>
-        <Label for="email">Email: </Label>
-        <Input
+    <div style={signInStyle}>
+      <div className='signin-container'>
+        <div>
+          <h2>Welcome to InfoWorkout!</h2>
+        </div>
+        <FormGroup floating>
+          <Label for="email">Email: </Label>
+          <Input
           id="email"
           type="email"
           name="email"
@@ -144,138 +135,104 @@ function SignIn(props) {
           invalid={!isValidEmail(email)}
           value={email}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup floating>
-        <Label>Password: </Label>
-        <Input
+        <FormGroup floating>
+          <Label>Password: </Label>
+          <Input
           id="password"
           type="password"
           name="password"
           placeholder="Password"
           value={password}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup floating>
-        <Label>Username: </Label>
-        <Input
+        <FormGroup floating>
+          <Label>Username: </Label>
+          <Input
           id="username"
           name="username"
           placeholder="Username"
           value={username}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup floating>
-        <Label>Gender: </Label>
-        <Input
+        <FormGroup floating>
+          <Label>Gender: </Label>
+          <Input
           id="gender"
           name="gender"
           placeholder="Gender"
           value={gender}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup floating>
-        <Label>Height: </Label>
-        <Input
+        <FormGroup floating>
+          <Label>Height: </Label>
+          <Input
           id="height"
           name="height"
           placeholder="Height"
           value={height}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup floating>
-        <Label>Weight: </Label>
-        <Input
+        <FormGroup floating>
+          <Label>Weight: </Label>
+          <Input
           id="weight"
           name="weight"
           placeholder="Weight"
           value={weight}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup floating>
-        <Label>Weight Goal: </Label>
-        <Input
+        <FormGroup floating>
+          <Label>Weight Goal: </Label>
+          <Input
           id="weightGoal"
           name="weightGoal"
           placeholder="Weight Goal"
           value={weightGoal}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup floating>
-        <Label>Daily Calorie Goal: </Label>
-        <Input
+        <FormGroup floating>
+          <Label>Daily Calorie Goal: </Label>
+          <Input
           id="calorieGoal"
           name="calorieGoal"
           placeholder="Daily Calorie Goal"
           value={calorieGoal}
           onChange={(event) => handleChange(event)}
-        />
-      </FormGroup>
+          />
+        </FormGroup>
 
-      <FormGroup>
-        <Button color="primary" className="mr-2" onClick={handleSignUp} disabled={isReadytoSubmit || username === '' || gender === '' || height === '' || weight === '' || weightGoal === '' || calorieGoal === ''}>
-          Sign Up
-        </Button>
-        {' '}
-        <Button color="success" className="mr-2" onClick={handleSignIn} disabled={isReadytoSubmit || username !== ''}>
-          Sign In
-        </Button>
-        {' '}
-        <Button color="danger" className="mr-2" onClick={handleSignOut} disabled={user === null}>
-          Sign Out
-        </Button>
-      </FormGroup>
-      {errorDiv}
+        <FormGroup>
+          <Button color="primary" className="mr-2" onClick={handleSignUp} disabled={isReadytoSubmit || username === '' || gender === '' || height === '' || weight === '' || weightGoal === '' || calorieGoal === ''}>
+            Sign Up
+          </Button>
+          {' '}
+          <Button color="success" className="mr-2" onClick={handleSignIn} disabled={isReadytoSubmit ||  username !== ''}>
+            Sign In
+          </Button>
+          {' '}
+          <Button color="danger" className="mr-2" onClick={handleSignOut} disabled={user === null}>
+            Sign Out
+          </Button>
+        </FormGroup>
+        {errorDiv}
       </div>
+    </div>
   );
 }
 
 export default SignIn;
-
-/*
-import React, { useState } from 'react'; //import React Component
-
-export default function SignIn(props)
-{
-    return (
-        <div>
-            <main>
-                <section>
-                    <h2>Please Input Your Information</h2>
-                    <div className='form-group'>
-                        <label>Username:</label>
-                    </div>
-                    <div className='form-group'>
-                        <label>Gender:</label>
-                    </div>
-                    <div className='form-group'>
-                        <label>Height:</label>
-                    </div>
-                    <div className='form-group'>
-                        <label>Weight:</label>
-                    </div>
-                    <div className='form-group'>
-                        <label>Weight Goal:</label>
-                    </div>
-                    <div className='form-group'>
-                        <label>Daily Calorie Goal:</label>
-                    </div>
-                </section>
-            </main>
-        </div>
-    );
-}
-*/

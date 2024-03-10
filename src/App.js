@@ -78,7 +78,7 @@ function App(props)
                 <Routes>
                     <Route element={<RequireSignIn />} >
                         <Route element={<NavBarLayout />} >
-                            <Route path='profile' element={<Profile />} />
+                            <Route path='profile' element={<Profile currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
                             <Route path='home' element={<Home workout={workoutTime} calories={calories} protein={protein} fats={fats} carbs={carbs} />} />
                             <Route path='food' element={<Food calories={calories} setCalories={setCalories} protein={protein} setProtein={setProtein} fats={fats} setFats={setFats} carbs={carbs} setCarbs={setCarbs} submitted={foodSubmitted} setSubmitted={setFoodSubmitted} currentFood={currentFood} setCurrentFood={setCurrentFood} foodRef={foodRef} />} />
                             <Route path='workout' element={<Workout setWorkout={setWorkoutTime} workout={workoutTime} setSubmitted={setSubmitted} submitted={submitted} currentWorkout={currentWorkout} setCurrentWorkout={setCurrentWorkout} workoutRef={workoutRef} />} />
