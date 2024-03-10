@@ -12,11 +12,7 @@ import { NavBarLayout } from './NavBar';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref} from 'firebase/database';
 import { firebaseConfig } from './Config';
-import {
-  getAuth,
-  onAuthStateChanged,
-  signOut
-} from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -26,6 +22,7 @@ const workoutRef = ref(db, 'workout');
 
 function App(props)
 {
+    // State Variables for Food.js
     const [calories, setCalories] = useState(0);
     const [protein, setProtein] = useState(0);
     const [fats, setFats] = useState(0);
@@ -41,6 +38,7 @@ function App(props)
         timeOfConsumption: '',
     });
     
+    // State Variables for Workout.js
     const [workoutTime, setWorkoutTime] = useState(0);
     const [submitted, setSubmitted] = useState(false);
     const [currentWorkout, setCurrentWorkout] = useState({
@@ -51,11 +49,22 @@ function App(props)
         reps: '',
     });
 
+    // State Variables for SignIn.js
+    const [showSignIn, setShowSignIn] = useState(true);
+    const [currentUser, setCurrentUser] = useState({
+        username: "",
+        gender: "",
+        height: "",
+        weight: "",
+        weightGoal: "",
+        dailyCalorieGoal: "",
+    });
+
     function RequireSignIn(props)
     {
-        if (!auth)
+        if (showSignIn)
         {
-            return <SignIn />
+            return <SignIn signedIn={showSignIn} setSignedIn={setShowSignIn} currentUser={currentUser} setCurrentUser={setCurrentUser} />
         }
         else
         {
@@ -76,7 +85,7 @@ function App(props)
                             <Route path="*" element={<Navigate to="/home" />} />
                         </Route>
                     </Route>
-                    <Route path='signin' element={<SignIn />} />
+                    <Route path='signin' element={<SignIn signedIn={showSignIn} setSignedIn={setShowSignIn} />} currentUser={currentUser} setCurrentUser={setCurrentUser} />
                 </Routes>
             </div>
         </main>

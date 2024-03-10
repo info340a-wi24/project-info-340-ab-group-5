@@ -14,12 +14,17 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-function SignIn() {
+function SignIn(props) {
   const [user, setUser] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [username, setUsername] = useState('');
+  const [gender, setGender] = useState('');
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+  const [weightGoal, setWeightGoal] = useState('');
+  const [calorieGoal, setCalorieGoal] = useState('');
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -28,6 +33,11 @@ function SignIn() {
         setEmail('');
         setPassword('');
         setErrorMessage('');
+        setGender('');
+        setHeight('');
+        setWeight('');
+        setWeightGoal('');
+        setCalorieGoal('');
       } else {
         setUser(null);
       }
@@ -40,6 +50,11 @@ function SignIn() {
     if (name === 'email') setEmail(value);
     else if (name === 'password') setPassword(value);
     else if (name === 'username') setUsername(value);
+    else if (name === 'gender') setGender(value);
+    else if (name === 'height') setHeight(value);
+    else if (name === 'weight') setWeight(value);
+    else if (name === 'weightGoal') setWeightGoal(value);
+    else if (name === 'calorieGoal') setCalorieGoal(value);
   };
 
   const handleSignUp = async () => {
@@ -47,6 +62,31 @@ function SignIn() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         await updateProfile(userCredential.user, { displayName: username });
         setUsername('');
+
+        await updateProfile(userCredential.gender, { displayName: gender });
+        setGender('');
+
+        await updateProfile(userCredential.height, { displayName: height });
+        setHeight('');
+
+        await updateProfile(userCredential.weight, { displayName: weight });
+        setWeight('');
+
+        await updateProfile(userCredential.weightGoal, { displayName: weightGoal });
+        setWeightGoal('');
+
+        await updateProfile(userCredential.calorieGoal, { displayName: calorieGoal });
+        setCalorieGoal('');
+
+        props.setShowSignIn(false);
+        props.setCurrentUser({
+          username: userCredential.user,
+          gender: userCredential.gender,
+          height: userCredential.height,
+          weight: userCredential.weight,
+          weightGoal: userCredential.weightGoal,
+          dailyCalorieGoal: userCredential.calorieGoal,
+        })
       
         setUser(userCredential.user);
     } catch (error) {
@@ -57,6 +97,7 @@ function SignIn() {
   const handleSignIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      props.setShowSignIn(false);
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -68,6 +109,11 @@ function SignIn() {
       setEmail('');
       setPassword('');
       setUsername('');
+      setGender('');
+      setHeight('');
+      setWeight('');
+      setWeightGoal('');
+      setCalorieGoal('');
     } catch (error) {
       setErrorMessage(error.message);
     }
@@ -81,10 +127,14 @@ function SignIn() {
   };
 
   const isReadytoSubmit = !!user || !isValidEmail(email) || password === '';
+  console.log(!!user);
+  console.log(!isValidEmail(email));
+  console.log(password === '');
 
   return (
     <div>
       <FormGroup floating>
+        <Label for="email">Email: </Label>
         <Input
           id="email"
           type="email"
@@ -95,10 +145,10 @@ function SignIn() {
           value={email}
           onChange={(event) => handleChange(event)}
         />
-        <Label for="email">Email</Label>
       </FormGroup>
 
       <FormGroup floating>
+        <Label>Password: </Label>
         <Input
           id="password"
           type="password"
@@ -107,10 +157,10 @@ function SignIn() {
           value={password}
           onChange={(event) => handleChange(event)}
         />
-        <Label>Password</Label>
       </FormGroup>
 
       <FormGroup floating>
+        <Label>Username: </Label>
         <Input
           id="username"
           name="username"
@@ -118,11 +168,65 @@ function SignIn() {
           value={username}
           onChange={(event) => handleChange(event)}
         />
-        <Label>Username</Label>
+      </FormGroup>
+
+      <FormGroup floating>
+        <Label>Gender: </Label>
+        <Input
+          id="gender"
+          name="gender"
+          placeholder="Gender"
+          value={gender}
+          onChange={(event) => handleChange(event)}
+        />
+      </FormGroup>
+
+      <FormGroup floating>
+        <Label>Height: </Label>
+        <Input
+          id="height"
+          name="height"
+          placeholder="Height"
+          value={height}
+          onChange={(event) => handleChange(event)}
+        />
+      </FormGroup>
+
+      <FormGroup floating>
+        <Label>Weight: </Label>
+        <Input
+          id="weight"
+          name="weight"
+          placeholder="Weight"
+          value={weight}
+          onChange={(event) => handleChange(event)}
+        />
+      </FormGroup>
+
+      <FormGroup floating>
+        <Label>Weight Goal: </Label>
+        <Input
+          id="weightGoal"
+          name="weightGoal"
+          placeholder="Weight Goal"
+          value={weightGoal}
+          onChange={(event) => handleChange(event)}
+        />
+      </FormGroup>
+
+      <FormGroup floating>
+        <Label>Daily Calorie Goal: </Label>
+        <Input
+          id="calorieGoal"
+          name="calorieGoal"
+          placeholder="Daily Calorie Goal"
+          value={calorieGoal}
+          onChange={(event) => handleChange(event)}
+        />
       </FormGroup>
 
       <FormGroup>
-        <Button color="primary" className="mr-2" onClick={handleSignUp} disabled={isReadytoSubmit || username === ''}>
+        <Button color="primary" className="mr-2" onClick={handleSignUp} disabled={isReadytoSubmit || username === '' || gender === '' || height === '' || weight === '' || weightGoal === '' || calorieGoal === ''}>
           Sign Up
         </Button>
         {' '}
