@@ -83,6 +83,14 @@ function SignIn(props) {
   const handleSignIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      props.setCurrentUser({
+        username: username,
+        gender: gender,
+        height: height,
+        weight: weight,
+        weightGoal: weightGoal,
+        dailyCalorieGoal: calorieGoal,
+      });
       props.setSignedIn(false);
     } catch (error) {
       setErrorMessage(error.message);
