@@ -90,31 +90,71 @@ export default function FoodPage(props) {
               <form id="food-input-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="foodName">Food Name:</label>
-                  <input type="text" id="foodName" name="foodName" value={foodData.foodName} onChange={handleChange} required />
+                  <input 
+                    type="text" 
+                    id="foodName" 
+                    name="foodName" 
+                    value={foodData.foodName} onChange={handleChange} required 
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="quantity">Quantity:</label>
-                  <input type="number" id="quantity" name="quantity" value={foodData.quantity} onChange={handleChange} min="1" required />
+                  <input 
+                    type="number" 
+                    id="quantity" 
+                    name="quantity" 
+                    value={foodData.quantity} onChange={handleChange} 
+                    min="1" required 
+                    />
                 </div>
                 <div className="form-group">
                   <label htmlFor="calories">Calories (kcal):</label>
-                  <input type="number" id="calories" name="calories" value={foodData.calories} onChange={handleChange} required />
+                  <input 
+                    type="number" 
+                    id="calories" 
+                    name="calories" 
+                    value={foodData.calories} onChange={handleChange} 
+                    min="0" required 
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="protein">Protein (g):</label>
-                  <input type="number" id="protein" name="protein" value={foodData.protein} onChange={handleChange} />
+                  <input 
+                    type="number" 
+                    id="protein" 
+                    name="protein" 
+                    value={foodData.protein} onChange={handleChange} 
+                    min="0"
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="carbs">Carbohydrates (g):</label>
-                  <input type="number" id="carbs" name="carbs" value={foodData.carbs} onChange={handleChange} />
+                  <input 
+                    type="number" 
+                    id="carbs" 
+                    name="carbs" 
+                    value={foodData.carbs} onChange={handleChange} 
+                    min="0"
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="fats">Fats (g):</label>
-                  <input type="number" id="fats" name="fats" value={foodData.fats} onChange={handleChange} />
+                  <input 
+                    type="number" 
+                    id="fats" 
+                    name="fats" 
+                    value={foodData.fats} onChange={handleChange} 
+                    min="0"
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="timeOfConsumption">Time of Consumption:</label>
-                  <input type="time" id="timeOfConsumption" name="timeOfConsumption" value={foodData.timeOfConsumption} onChange={handleChange} required />
+                  <input 
+                    type="time" 
+                    id="timeOfConsumption" 
+                    name="timeOfConsumption" 
+                    value={foodData.timeOfConsumption} onChange={handleChange} required 
+                  />
                 </div>
                 <button type="submit">Submit</button>
             </form>
