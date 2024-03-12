@@ -1,5 +1,4 @@
 import React from 'react'; // Import React Component
-import Background from './img/profile_background.jpg';
 
 export default function Home(props) {
     // Placeholder function for updating demographic information
@@ -16,12 +15,8 @@ export default function Home(props) {
         alert("Account Deletion");
     };
 
-    const profileStyle = {
-        backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
-    };
-
     return (
-        <div style={profileStyle}>
+        <div>
             <main>
                 <div className="profile-container">
                     <h1 id="username">Welcome, {props.currentUser.username}</h1>

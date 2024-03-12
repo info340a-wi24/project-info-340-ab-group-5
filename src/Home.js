@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react'; //import React Component
-import Background from './img/home_background.jpg';
 
 export default function HomePage(props) {
-    const homeStyle = {
-        backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
-    };
-
     return (
-        <div style={homeStyle}>
+        <div>
             <main>
                 <div className="homefeed">
                     <h1>Today's Summary</h1>

@@ -10,7 +10,6 @@ import {
   onAuthStateChanged,
   signOut,
 } from 'firebase/auth';
-import Background from './img/home_background.jpg';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -122,12 +121,8 @@ function SignIn(props) {
 
   const isReadytoSubmit = !!user || !isValidEmail(email) || password === '';
 
-  const signInStyle = {
-    backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
-  };
-
   return (
-    <div style={signInStyle}>
+    <div>
       <div className='signin-container'>
         <div>
           <h2>Welcome to InfoWorkout!</h2>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Background from './img/food_background.jpeg';
 
 import { push } from 'firebase/database';
 
@@ -50,10 +49,6 @@ export default function FoodPage(props) {
       .then(() => props.setSubmitted(true));
   };
 
-  const foodStyle = {
-    backgroundImage: `linear-gradient(rgba(169,169,169,0.9), rgba(169,169,169,0.9)), url(${Background})`
-  };
-
   const clearForm = () => {
     setFoodData({
       foodName: '',
@@ -68,7 +63,7 @@ export default function FoodPage(props) {
   };
 
   return (
-    <div className='food-input-container' style={foodStyle}>
+    <div className='food-input-container'>
       <div className='top-background'></div>
       <section className='content-container'>
         {props.submitted ? (

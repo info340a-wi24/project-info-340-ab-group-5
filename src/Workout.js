@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Background from './img/workout_background.jpg';
 
 import { push } from 'firebase/database';
 
@@ -72,12 +71,8 @@ export default function Workout(props) {
     props.setSubmitted(false);
   };
 
-  const workoutStyle = {
-    backgroundImage: `linear-gradient(rgba(169,169,169,0.9),rgba(169,169,169,0.9)), url(${Background})`
-  };
-
   return (
-    <div className="workout-container" style={workoutStyle}>
+    <div className="workout-container">
       <div className="top-background"></div>
       <section className="content-container">
       {props.submitted ? (
