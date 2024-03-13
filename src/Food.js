@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import foodImage from './img/food_image.jpg';
 
 import { push } from 'firebase/database';
 
@@ -82,6 +83,7 @@ export default function FoodPage(props) {
           <main>
             <section>
               <h2>Track Your Food Intake</h2>
+              <img src={foodImage} alt="Plate of food" />
               <form id="food-input-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="foodName">Food Name:</label>

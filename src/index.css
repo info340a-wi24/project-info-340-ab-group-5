@@ -8,7 +8,12 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-color: #f5f5f5;
+    background-color: white;
+}
+
+img {
+    width: 10%;
+    height: 10%;
 }
 
 /* Navigation Bar CSS */
@@ -70,18 +75,6 @@ li {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
     }
 
     .nav-menu {
@@ -198,7 +191,6 @@ footer {
 }
 
 /* SignIn Page CSS */
-/* Still Need to be able to make image go full screen */
 
 .signin-container {
     text-align: center;

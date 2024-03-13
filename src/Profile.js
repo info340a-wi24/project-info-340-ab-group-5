@@ -1,24 +1,12 @@
 import React from 'react'; // Import React Component
+import profileImage from './img/profile_image.jpg';
 
 export default function Home(props) {
-    // Placeholder function for updating demographic information
-    const updateDemographicInfo = () => {
-        // This function can open a modal or navigate to a page where the user can update their info
-        // After updating, you should fetch the updated information and use setUser to update the state
-        alert("Update Demographic Information");
-    };
-
-    // Placeholder function for deleting account
-    const deleteAccount = () => {
-        // Implement functionality to handle account deletion
-        // Ensure to properly manage user's session and data cleanup
-        alert("Account Deletion");
-    };
-
     return (
         <div>
             <main>
                 <div className="profile-container">
+                    <img src={profileImage} alt="Blank profile" />
                     <h1 id="username">Welcome, {props.currentUser.username}</h1>
                     <h1 id="demographic">Demographic Information</h1>
                     <ul>
@@ -27,11 +15,6 @@ export default function Home(props) {
                         <li>Weight: {props.currentUser.weight}</li>
                         <li>Weight Goal: {props.currentUser.weightGoal}</li>
                         <li>Daily Calorie Goal: {props.currentUser.dailyCalorieGoal}</li>
-                    </ul>
-                    <h1 id="setting">Settings</h1>
-                    <ul>
-                        <li><button onClick={updateDemographicInfo}>Change Demographic Information</button></li>
-                        <li><button onClick={deleteAccount}>Delete Account</button></li>
                     </ul>
                 </div>
             </main>

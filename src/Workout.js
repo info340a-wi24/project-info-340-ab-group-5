@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import workoutImage from './img/workout_image.jpg';
 
 import { push } from 'firebase/database';
 
@@ -41,25 +42,6 @@ export default function Workout(props) {
       .then(() => props.setSubmitted(true));
   };
 
-  /*
-  const sendTweet = () => {
-    const currentUser = auth.currentUser;
-
-    if (currentUser) {
-      const tweet = {
-        user: currentUser.displayName,
-        timestamp: Date.now(),
-        text: tweetText,
-        likes: 0,
-      };
-
-      push(tweetsRef, tweet)
-        .then(() => setTweetText(''))
-        .catch((error) => console.log('Error: ', error));
-    }
-  };
-  */
-
   const clearForm = () => {
     setWorkoutData({
       workoutType: '',
@@ -90,6 +72,7 @@ export default function Workout(props) {
         <main>
           <section>
             <h2>Track Your Workout</h2>
+            <img src={workoutImage} alt="People working out" />
             <form id="workout-input-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="workout-type">Workout Type:</label>
