@@ -6,7 +6,7 @@ export default function HomePage(props) {
             <main>
                 <div className="homefeed">
                     <h1>Today's Summary</h1>
-                    <h2>Calories: {props.calories}/2500</h2>
+                    <h2>Calories: {props.calories}/{props.currentUser.dailyCalorieGoal}</h2>
                     <h2>Protein (g): {props.protein}/95</h2>
                     <h2>Fats (g): {props.fats}/30</h2>
                     <h2>Carbohydrates (g): {props.carbs}/130</h2>

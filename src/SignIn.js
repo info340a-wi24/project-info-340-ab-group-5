@@ -71,6 +71,7 @@ function SignIn(props) {
           weightGoal: weightGoal,
           dailyCalorieGoal: calorieGoal,
         });
+
         props.setSignedIn(false);
       
         setUser(userCredential.user);
@@ -82,13 +83,20 @@ function SignIn(props) {
   const handleSignIn = async () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      props.setCurrentUser({
-        username: username,
-        gender: gender,
-        height: height,
-        weight: weight,
-        weightGoal: weightGoal,
-        dailyCalorieGoal: calorieGoal,
+
+      onAuthStateChanged(auth, (firebaseUser) => {
+        if (firebaseUser)
+        {
+          console.log(firebaseUser);
+          props.setCurrentUser({
+            username: firebaseUser.displayName,
+            gender: props.currentUser.gender,
+            height: props.currentUser.height,
+            weight: props.currentUser.weight,
+            weightGoal: props.currentUser.weightGoal,
+            dailyCalorieGoal: props.currentUser.dailyCalorieGoal,
+          })
+        }
       });
       props.setSignedIn(false);
     } catch (error) {

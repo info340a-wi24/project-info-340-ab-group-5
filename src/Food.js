@@ -71,7 +71,7 @@ export default function FoodPage(props) {
           <section className="submitted-info">
             <h2>Your Food Information</h2>
             <p>Date: {props.currentFood.timeOfConsumption}</p>
-            <p>Food Name: {props.currentFood.FoodName}</p>
+            <p>Food Name: {props.currentFood.foodName}</p>
             <p>Quantity: {props.currentFood.quantity} </p>
             <p>Calories: {props.currentFood.calories}</p>
             <p>Protein: {props.currentFood.protein}</p>

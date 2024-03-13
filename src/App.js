@@ -52,12 +52,12 @@ function App(props)
     // State Variables for SignIn.js
     const [showSignIn, setShowSignIn] = useState(true);
     const [currentUser, setCurrentUser] = useState({
-        username: "",
-        gender: "",
-        height: "",
-        weight: "",
-        weightGoal: "",
-        dailyCalorieGoal: "",
+        username: "USERNAME",
+        gender: "Female",
+        height: "0'0\"",
+        weight: "0 lbs",
+        weightGoal: "0 lbs",
+        dailyCalorieGoal: "0 cal",
     });
 
     function RequireSignIn(props)
@@ -79,7 +79,7 @@ function App(props)
                     <Route element={<RequireSignIn />} >
                         <Route element={<NavBarLayout />} >
                             <Route path='profile' element={<Profile currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
-                            <Route path='home' element={<Home workout={workoutTime} calories={calories} protein={protein} fats={fats} carbs={carbs} />} />
+                            <Route path='home' element={<Home workout={workoutTime} calories={calories} protein={protein} fats={fats} carbs={carbs} currentUser={currentUser} />} />
                             <Route path='food' element={<Food calories={calories} setCalories={setCalories} protein={protein} setProtein={setProtein} fats={fats} setFats={setFats} carbs={carbs} setCarbs={setCarbs} submitted={foodSubmitted} setSubmitted={setFoodSubmitted} currentFood={currentFood} setCurrentFood={setCurrentFood} foodRef={foodRef} />} />
                             <Route path='workout' element={<Workout setWorkout={setWorkoutTime} workout={workoutTime} setSubmitted={setSubmitted} submitted={submitted} currentWorkout={currentWorkout} setCurrentWorkout={setCurrentWorkout} workoutRef={workoutRef} />} />
                             <Route path="*" element={<Navigate to="/home" />} />
